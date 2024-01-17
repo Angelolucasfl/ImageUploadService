@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploader Service</title>
+</head>
+<body>
+    <h1>File Uploader Service</h1>
+
+    <form id="uploadForm">
+        <input type="file" id="myFile" accept="image/*" multiple>
+        <button>Enviar</button>
+    </form>
+    <h2></h2>
+    <h3></h3>
+
+    <script>
+        const form = document.getElementById("uploadForm");
+        const sendFile = async () => {
+            const myFile = document.getElementById("myFile").files;
+            const formData = new FormData();
+
+            Object.keys(myFile).forEach((key) =>{
+                formData.append(myFile.item(key).name, myFile.item(key));
+            });
+
+            const response = await fetch("http://127.0.0.1:8000/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            const json = await response.json();
+            console.log(json);
+
+            const h2 = document.querySelector("h2");
+            h2.textContent = `Status: ${json?.status}`;
+            
+            const h3 = document.querySelector("h3");
+            h3.textContent = json?.message;
+
+            console.log(json);
+        }
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            sendFile();
+        });
+    </script>
+</body>
+</html>
