@@ -1,10 +1,9 @@
-import express from "express";
 import cors from "cors";
+import express from "express";
+import fileUpload, { UploadedFile } from "express-fileupload";
+import path from "path";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocs from "./swagger.json";
-import fileUpload from "express-fileupload";
-import path from "path";
-import { UploadedFile } from "express-fileupload";
 
 import { Request, Response } from "express";
 import fileExtLimiter from "./middleware/fileExtLimiter";
@@ -12,9 +11,9 @@ import filePayloadExists from "./middleware/filesPayloadExists";
 import fileSizeLimiter from "./middleware/fileSizeLimiter";
 
 export class App {
-  public app: express.Application;
+    public app: express.Application;
 
-  constructor() {
+    constructor() {
     this.app = express();
     this.config();
     this.routes();
@@ -30,7 +29,7 @@ export class App {
       swaggerUi.setup(swaggerDocs),
     );
   }
-
+            
   routes() {
     this.app.get("/", (req: Request, res: Response) => {
       res.sendFile(path.join(__dirname, "index.html"));

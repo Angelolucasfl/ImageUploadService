@@ -29,7 +29,7 @@ const fileExtLimiter = (allowedExtArray: string[]) => {
             const allowed = fileExt.every(ext => allowedExtArray.includes(ext));
 
             if (!allowed) {
-                const message = `Upload falhou. Apenas extensões de arquivo ${ allowedExtArray.toString() } são permitidas.`;
+                const message = `Upload falhou. Apenas extensões de arquivo ${allowedExtArray.toString()} são permitidas.`;
                 return res.status(422).json({ status: "error", message });
             }
         } else {
