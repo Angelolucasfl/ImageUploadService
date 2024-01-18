@@ -11,17 +11,17 @@ import filePayloadExists from "./middleware/filesPayloadExists";
 import fileSizeLimiter from "./middleware/fileSizeLimiter";
 
 export class App {
-    public app: express.Application;
+  public app: express.Application;
 
-    constructor() {
+  constructor() {
     this.app = express();
     this.config();
     this.routes();
   }
 
   private config(): void {
-    this.app.use(express.json())
-    this.app.use(express.urlencoded({ extended: true }))
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
     this.app.use(
       "/api-docs",
@@ -69,7 +69,7 @@ export class App {
             }
           }
         });
-
+        console.log(files);
         return res.json({ message: Object.keys(files).toString(), status: "sucess" });
       });
   }
