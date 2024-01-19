@@ -14,7 +14,6 @@ describe("File Upload API", () => {
   it("should handle file upload successfully", async () => {
     const response = await supertest(app)
       .post("/upload")
-      .field("description", "Teste de descrição") 
       .attach("files", regularImageFile.buffer, { filename: regularImageFile.originalname });
 
     expect(response.status).toBe(200);
