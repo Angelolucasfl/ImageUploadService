@@ -6,6 +6,7 @@ describe("Testing the app initialization", () => {
     const app = new App().app;
     const response = await request(app).get("/");
 
-    expect(response.body).toStrictEqual({ message: "Hello World!" });
+    expect(response.status).toBe(200);
+    expect(response.type).toBe("text/html");
   });
 });

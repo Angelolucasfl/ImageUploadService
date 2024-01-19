@@ -69,8 +69,8 @@ export class App {
             }
           }
         });
-        console.log(files);
-        return res.json({ message: Object.keys(files).toString(), status: "sucess" });
+        
+        return res.json({ message: Object.keys(files).toString(), status: "sucesso" });
       });
   }
 }
