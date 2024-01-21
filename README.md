@@ -1,8 +1,8 @@
-# Express-TypeScript Template
+# File Upload Service
 
 ## 🔥 Introdução
 
-Esse projeto se trata de um template para o desenvolvimeto de APIs com express e typescript  
+Esse projeto se trata de um web service que auxilia no upload de arquivos de imagem para um servidor 
 
 ### ⚙️ Pré-requisitos
 
@@ -43,7 +43,7 @@ npm run dev
 Acesse o projeto em seu navegador:
 
 ```
-http://127.0.0.1:8000/api-docs
+http://127.0.0.1:8000
 ```
 
 ## 🛠️ Executando os testes
@@ -55,18 +55,14 @@ npm run test
 
 ## 📦 Tecnologias usadas:
 
-Além do typescript e do express, esse template tambem contém o prisma como ORM, o Eslint com o Prettier pra fortação e detecção de erros, jest e supertest pra testagem e swagger pra documentação.
+Para construção do servidor essa API utiliza o typeScript e o express, junto do express-fileupload para auxiliar na construção do serviço de upload de imagem em especifico. O projeto ainda conta com o Eslint e Prettier pra formatação e detecção de erros e jest e supertest pra testagem.
 
 * ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
 * ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-* ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
-
 
 * ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
-
-* ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 
 * ![Eslint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 

@@ -2,8 +2,6 @@ import cors from "cors";
 import express from "express";
 import fileUpload, { UploadedFile } from "express-fileupload";
 import path from "path";
-import swaggerUi from "swagger-ui-express";
-import swaggerDocs from "./swagger.json";
 
 import { Request, Response } from "express";
 import fileExtLimiter from "./middleware/fileExtLimiter";
@@ -23,11 +21,6 @@ export class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
-    this.app.use(
-      "/api-docs",
-      swaggerUi.serve,
-      swaggerUi.setup(swaggerDocs),
-    );
   }
             
   routes() {
